@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+            </div>
+            <span class="logo-text">CMS Portal</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="dashboard">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                    </svg>
+                </span>
+                <span class="nav-label">Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" data-page="attendance">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l3 3L22 4" />
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+                    </svg>
+                </span>
+                <span class="nav-label">Attendance</span>
+            </a>
+            <a href="#" class="nav-item" data-page="interview">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                </span>
+                <span class="nav-label">Interview</span>
+            </a>
+            <a href="#" class="nav-item" data-page="notice">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
+                    </svg>
+                </span>
+                <span class="nav-label">Notice</span>
+            </a>
+            <a href="#" class="nav-item" data-page="profile">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </span>
+                <span class="nav-label">Profile</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="sidebar-user">
+                <div class="user-avatar-sm">AK</div>
+                <div class="user-info">
+                    <span class="user-name-sm">Arjun Kumar</span>
+                    <span class="user-role">Student</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ===== OVERLAY ===== -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ===== MAIN WRAPPER ===== -->
+    <div class="main-wrapper">
+
+        <!-- TOP NAVBAR -->
+        <header class="navbar">
+            <div class="navbar-left">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <h1 class="navbar-title">COLLEGE MANAGEMENT SYSTEM</h1>
+            </div>
+            <div class="navbar-right">
+                <div class="notif-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
+                    </svg>
+                    <span class="notif-dot"></span>
+                </div>
+                <div class="user-avatar">AK</div>
+                <button class="logout-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" />
+                    </svg>
+                    Logout
+                </button>
+            </div>
+        </header>
+
+        <!-- ===== DASHBOARD CONTENT ===== -->
+        <main class="dashboard">
+
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-text">
+                    <h2>Welcome back, Arjun! 👋</h2>
+                    <p>Here's your academic overview for today, <strong>Monday, March 2, 2026</strong></p>
+                </div>
+                <div class="semester-badge">Semester 6 — B.Tech CSE</div>
+            </div>
+
+            <!-- SECTION 1: Top Cards -->
+            <div class="top-cards-grid">
+
+                <!-- Card 1: Attendance -->
+                <div class="card attendance-card">
+                    <h3 class="card-title">Attendance Percentage</h3>
+                    <div class="ring-wrapper">
+                        <svg class="progress-ring" viewBox="0 0 120 120">
+                            <circle class="ring-bg" cx="60" cy="60" r="50" />
+                            <circle class="ring-fill" cx="60" cy="60" r="50" stroke-dasharray="314"
+                                stroke-dashoffset="78.5" id="attendanceRing" />
+                        </svg>
+                        <div class="ring-label">
+                            <span class="ring-percent">75%</span>
+                            <span class="ring-sub">of classes</span>
+                        </div>
+                    </div>
+                    <span class="status-badge badge-green">✓ Excellent</span>
+                    <div class="attendance-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">45</span>
+                            <span class="stat-lbl">Present</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num">15</span>
+                            <span class="stat-lbl">Absent</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num">60</span>
+                            <span class="stat-lbl">Total</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pending Assignments -->
+                <div class="card assignments-card">
+                    <div class="card-header-row">
+                        <h3 class="card-title">Pending Assignments</h3>
+                        <span class="status-badge badge-red">3 Due</span>
+                    </div>
+                    <div class="assignment-group">
+                        <div class="group-header">
+                            <span class="group-subject">History</span>
+                            <span class="status-badge badge-red">Pending</span>
+                        </div>
+                        <ul class="assignment-list">
+                            <li>
+                                <span class="assign-dot"></span>
+                                <span class="assign-name">Renaissance Era Essay</span>
+                                <span class="assign-due">Due Mar 5</span>
+                            </li>
+                            <li>
+                                <span class="assign-dot"></span>
+                                <span class="assign-name">WWI Causes Analysis</span>
+                                <span class="assign-due">Due Mar 8</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="assignment-group">
+                        <div class="group-header">
+                            <span class="group-subject">Data Structures</span>
+                            <span class="status-badge badge-red">Pending</span>
+                        </div>
+                        <ul class="assignment-list">
+                            <li>
+                                <span class="assign-dot orange"></span>
+                                <span class="assign-name">AVL Tree Implementation</span>
+                                <span class="assign-due">Due Mar 10</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Campus Closure (right panel) -->
+                <div class="card notice-card">
+                    <div class="notice-icon">📢</div>
+                    <h3 class="card-title">Campus Closure</h3>
+                    <p class="notice-text">
+                        The campus will remain closed on <strong>March 7th & 8th</strong> due to the annual cultural
+                        fest. All examinations scheduled for those days have been postponed.
+                    </p>
+                    <div class="notice-meta">
+                        <span class="notice-date">Posted: Mar 1, 2026</span>
+                        <a href="#" class="notice-link">Read more →</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECTION 2: Interview Preparation -->
+            <div class="section-row">
+                <div class="card interview-card">
+                    <div class="card-header-row">
+                        <h3 class="card-title">Interview Preparation Progress</h3>
+                        <div class="tab-group" id="tabGroup">
+                            <button class="tab-btn" data-tab="aptitude">Aptitude</button>
+                            <button class="tab-btn active" data-tab="technical">Technical</button>
+                            <button class="tab-btn" data-tab="hr">HR</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="tabContent">
+
+                        <div class="tab-panel" data-panel="aptitude" style="display:none;">
+                            <div class="progress-rows">
+                                <div class="prog-row">
+                                    <span class="prog-label">Quantitative</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar" style="width:80%"></div>
+                                    </div>
+                                    <span class="prog-val">80%</span>
+                                </div>
+                                <div class="prog-row">
+                                    <span class="prog-label">Logical Reasoning</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar" style="width:65%"></div>
+                                    </div>
+                                    <span class="prog-val">65%</span>
+                                </div>
+                                <div class="prog-row">
+                                    <span class="prog-label">Verbal Ability</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar" style="width:72%"></div>
+                                    </div>
+                                    <span class="prog-val">72%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-panel" data-panel="technical">
+                            <div class="progress-rows">
+                                <div class="prog-row">
+                                    <span class="prog-label">Data Structures</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar prog-indigo" style="width:88%"></div>
+                                    </div>
+                                    <span class="prog-val">88%</span>
+                                </div>
+                                <div class="prog-row">
+                                    <span class="prog-label">Algorithms</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar prog-indigo" style="width:74%"></div>
+                                    </div>
+                                    <span class="prog-val">74%</span>
+                                </div>
+                                <div class="prog-row">
+                                    <span class="prog-label">System Design</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar prog-indigo" style="width:55%"></div>
+                                    </div>
+                                    <span class="prog-val">55%</span>
+                                </div>
+                                <div class="prog-row">
+                                    <span class="prog-label">DBMS</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar prog-indigo" style="width:91%"></div>
+                                    </div>
+                                    <span class="prog-val">91%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-panel" data-panel="hr" style="display:none;">
+                            <div class="progress-rows">
+                                <div class="prog-row">
+                                    <span class="prog-label">Communication</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar prog-green" style="width:90%"></div>
+                                    </div>
+                                    <span class="prog-val">90%</span>
+                                </div>
+                                <div class="prog-row">
+                                    <span class="prog-label">Situational Q&A</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar prog-green" style="width:68%"></div>
+                                    </div>
+                                    <span class="prog-val">68%</span>
+                                </div>
+                                <div class="prog-row">
+                                    <span class="prog-label">Company Research</span>
+                                    <div class="prog-bar-wrap">
+                                        <div class="prog-bar prog-green" style="width:45%"></div>
+                                    </div>
+                                    <span class="prog-val">45%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Performance Summary -->
+            <div class="section-row">
+                <div class="card perf-card">
+                    <div class="card-header-row">
+                        <h3 class="card-title">Performance Summary</h3>
+                        <div class="perf-legend">
+                            <span class="legend-item"><span class="legend-dot indigo"></span>2025</span>
+                            <span class="legend-item"><span class="legend-dot teal"></span>2026</span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-y-axis">
+                            <span>100</span><span>75</span><span>50</span><span>25</span><span>0</span>
+                        </div>
+                        <div class="chart-bars-area">
+                            <div class="chart-grid-lines">
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                            </div>
+                            <div class="bars-row">
+                                <div class="bar-group">
+                                    <div class="bar-pair">
+                                        <div class="bar bar-indigo" style="--h:78%"><span class="bar-tip">78</span>
+                                        </div>
+                                        <div class="bar bar-teal" style="--h:85%"><span class="bar-tip">85</span></div>
+                                    </div>
+                                    <span class="bar-label">Math</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar-pair">
+                                        <div class="bar bar-indigo" style="--h:65%"><span class="bar-tip">65</span>
+                                        </div>
+                                        <div class="bar bar-teal" style="--h:74%"><span class="bar-tip">74</span></div>
+                                    </div>
+                                    <span class="bar-label">Physics</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar-pair">
+                                        <div class="bar bar-indigo" style="--h:90%"><span class="bar-tip">90</span>
+                                        </div>
+                                        <div class="bar bar-teal" style="--h:92%"><span class="bar-tip">92</span></div>
+                                    </div>
+                                    <span class="bar-label">CS</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar-pair">
+                                        <div class="bar bar-indigo" style="--h:55%"><span class="bar-tip">55</span>
+                                        </div>
+                                        <div class="bar bar-teal" style="--h:68%"><span class="bar-tip">68</span></div>
+                                    </div>
+                                    <span class="bar-label">English</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar-pair">
+                                        <div class="bar bar-indigo" style="--h:82%"><span class="bar-tip">82</span>
+                                        </div>
+                                        <div class="bar bar-teal" style="--h:79%"><span class="bar-tip">79</span></div>
+                                    </div>
+                                    <span class="bar-label">History</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar-pair">
+                                        <div class="bar bar-indigo" style="--h:71%"><span class="bar-tip">71</span>
+                                        </div>
+                                        <div class="bar bar-teal" style="--h:88%"><span class="bar-tip">88</span></div>
+                                    </div>
+                                    <span class="bar-label">DBMS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
